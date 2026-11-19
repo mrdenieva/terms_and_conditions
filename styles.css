@@ -1,0 +1,273 @@
+/* Open Sauce Sans — Alfredo Marco Pradil / Hanken Design Co.
+   SIL Open Font License 1.1, see assets/fonts/OFL.txt */
+@font-face {
+  font-family: "Open Sauce Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/OpenSauceSans-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Open Sauce Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/OpenSauceSans-Medium.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Open Sauce Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/fonts/OpenSauceSans-Bold.woff2") format("woff2");
+}
+
+:root {
+  /* Palette sampled from the reference artwork */
+  --ink: #000000;
+  --page: #1e1e1e;
+  --cream: #efe3ce;
+  --orange: #d55800;
+  --yellow: #ffcc43;
+  --muted: rgba(0, 0, 0, 0.6);
+  --border: 2px solid var(--ink);
+
+  /* One family for the whole page, with a system fallback */
+  --font-display: "Open Sauce Sans", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-body: "Open Sauce Sans", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  padding: clamp(10px, 3vw, 40px) clamp(10px, 3vw, 40px);
+  background: var(--page);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.page {
+  width: 100%;
+  max-width: 620px;
+  margin: 0 auto;
+  background: var(--cream);
+  border: 1px solid var(--ink);
+  display: flex;
+  flex-direction: column;
+  min-height: 460px;
+}
+
+/* ---------- Header ---------- */
+
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 20px;
+  padding: 10px 14px;
+  background: var(--orange);
+  border-bottom: 3px solid var(--ink);
+}
+
+.logo {
+  display: inline-flex;
+  padding: 5px 10px;
+  background: var(--yellow);
+  border: var(--border);
+  border-radius: 2px;
+  line-height: 0;
+}
+
+.logo__img {
+  display: block;
+  width: 132px;
+  max-width: 100%;
+  height: auto;
+}
+
+.site-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-nav a {
+  display: block;
+  padding: 6px 14px;
+  background: var(--yellow);
+  border: var(--border);
+  border-radius: 3px;
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.site-nav a:hover,
+.site-nav a:focus-visible {
+  background: var(--ink);
+  color: var(--yellow);
+}
+
+/* ---------- Content ---------- */
+
+.content {
+  flex: 1;
+  padding: clamp(18px, 4.5vw, 26px) clamp(16px, 5vw, 40px);
+}
+
+.content h1 {
+  margin: 0 0 5px;
+  font-family: var(--font-display);
+  font-size: clamp(24px, 5vw, 27px);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.005em;
+}
+
+.content .updated {
+  margin: 0 0 20px;
+  font-family: var(--font-body);
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--muted);
+}
+
+.content p {
+  margin: 0 0 16px;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.content ul {
+  margin: 0 0 16px;
+  padding-left: 1.6em;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.content li {
+  margin-bottom: 4px;
+}
+
+.content li::marker {
+  color: var(--ink);
+}
+
+.content a {
+  color: var(--orange);
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.content a:hover,
+.content a:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  padding: 10px clamp(16px, 5vw, 40px) clamp(22px, 5vw, 30px);
+}
+
+.site-footer p {
+  margin: 0;
+  font-size: 10.5px;
+  color: var(--ink);
+}
+
+.site-footer a {
+  margin-left: 4px;
+  color: var(--orange);
+  text-decoration: none;
+}
+
+.site-footer a:hover,
+.site-footer a:focus-visible {
+  text-decoration: underline;
+}
+
+/* ---------- Focus ---------- */
+
+a:focus-visible {
+  outline: 2px solid var(--orange);
+  outline-offset: 2px;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 560px) {
+  body {
+    padding: 0;
+    background: var(--cream);
+    font-size: 12.5px;
+  }
+
+  .page {
+    max-width: none;
+    border: 0;
+    min-height: 100vh;
+  }
+
+  .site-header {
+    justify-content: center;
+    gap: 10px;
+    padding: 12px;
+  }
+
+  .logo {
+    padding: 4px 9px;
+  }
+
+  .site-nav {
+    width: 100%;
+  }
+
+  .site-nav ul {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+  }
+
+  .site-nav a {
+    padding: 7px 4px;
+    font-size: 10.5px;
+    text-align: center;
+    letter-spacing: 0.06em;
+  }
+
+  .content h1 {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 360px) {
+  .site-nav ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
